@@ -57,9 +57,15 @@ nav ul li a:hover {
 .hero {
     min-height: 480px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    gap: 40px;
     padding: 80px 10%;
     background: linear-gradient(120deg, #E9E5DD, #FFFFFF);
+}
+
+.hero-content {
+    flex: 1;
 }
 
 .hero h3 {
@@ -105,6 +111,29 @@ nav ul li a:hover {
     color: #17243A;
 }
 
+/* HOME PROFILE PICTURE */
+
+.profile-container {
+    flex: 0 0 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 7px solid #C5A46D;
+    box-shadow: 0 10px 30px rgba(23,36,58,0.18);
+    transition: 0.3s;
+}
+
+.profile-picture:hover {
+    transform: scale(1.05);
+}
+
 /* SECTIONS */
 
 section {
@@ -145,25 +174,28 @@ section {
     color: #667085;
 }
 
-
 /* CARDS */
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 420px));
+    justify-content: center;
+    align-items: stretch;
     gap: 20px;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 25px auto;
     padding: 0 15px;
 }
 
 .card {
+    width: 100%;
     background: #FFFFFF;
     padding: 18px;
     border-radius: 10px;
     border: 1px solid #E5E1D8;
     box-shadow: 0 4px 12px rgba(23,36,58,0.06);
     transition: 0.3s;
+    overflow: hidden;
 }
 
 .card:hover {
@@ -184,6 +216,7 @@ section {
 }
 
 .card img {
+    display: block;
     width: 100%;
     height: 150px;
     object-fit: contain;
@@ -191,20 +224,30 @@ section {
     margin-bottom: 10px;
 }
 
-/* MOBILE RESPONSIVE */
+/* FAVORITE FOOD IMAGES */
 
-@media (max-width: 600px) {
-    .cards {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        gap: 15px;
-    }
-
-    .card img {
-        height: 180px;
-    }
+.food-img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
+/* FAVORITE GAME IMAGES */
+
+#games .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+#games .card:hover img {
+    transform: scale(1.02);
+}
 
 /* CONTACT */
 
@@ -234,7 +277,9 @@ footer p:last-child {
 
 /* MOBILE RESPONSIVE */
 
-@media (max-width: 650px) {
+@media (max-width: 670px) {
+
+    /* NAVIGATION */
 
     nav {
         flex-direction: column;
@@ -247,63 +292,24 @@ footer p:last-child {
         gap: 14px;
     }
 
-    .hero h1 {
-        font-size: 34px;
-    }
+    /* HOME */
 
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    section {
-        padding: 50px 6%;
-    }
-
-}
-
-
-/* HOME PROFILE PICTURE */
-
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-}
-
-.hero-content {
-    flex: 1;
-}
-
-.profile-container {
-    flex: 0 0 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.profile-picture {
-    width: 280px;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 7px solid #C5A46D;
-    box-shadow: 0 10px 30px rgba(23,36,58,0.18);
-    transition: 0.3s;
-}
-
-.profile-picture:hover {
-    transform: scale(1.05);
-}
-
-/* MOBILE PROFILE PICTURE */
-
-@media (max-width: 670px) {
     .hero {
         flex-direction: column-reverse;
         text-align: center;
         padding: 70px 6%;
     }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* PROFILE */
 
     .profile-container {
         flex: none;
@@ -313,55 +319,35 @@ footer p:last-child {
         width: 200px;
         height: 200px;
     }
-}
 
+    /* CARDS */
 
-/* FAVORITE GAME IMAGES */
-
-#games .card img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 18px;
-    transition: 0.3s;
-}
-
-#games .card:hover img {
-    transform: scale(1.02);
-}
-
-.food-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    overflow: hidden;
-}
-
-
-/* CENTERED K-DRAMA CARDS */
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 420px));
-    justify-content: center;
-    gap: 20px;
-    max-width: 1000px;
-    margin: 25px auto;
-    padding: 0 15px;
-}
-@media (max-width: 600px) {
     .cards {
         grid-template-columns: minmax(0, 420px);
         justify-content: center;
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card img {
+        height: 180px;
+    }
+
+    /* SECTIONS */
+
+    section {
+        padding: 50px 6%;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .about-box {
+        padding: 25px;
     }
 }
