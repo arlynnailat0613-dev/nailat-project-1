@@ -402,6 +402,6 @@ footer p:last-child {
 #favorites .card img:hover,
 #foods .card img:hover,
 #dramas .card img:hover {
-    border-color: #1ae50b;
+    border-color: #9047d9;
     transform: scale(1.02);
 }
