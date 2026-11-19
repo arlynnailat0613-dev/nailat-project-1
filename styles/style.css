@@ -346,3 +346,22 @@ footer p:last-child {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     overflow: hidden;
 }
+
+
+/* CENTERED K-DRAMA CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 420px));
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 0 15px;
+}
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: minmax(0, 420px);
+        justify-content: center;
+    }
+}
